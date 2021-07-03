@@ -1,0 +1,10 @@
+{
+    "calibrationAir": 650,
+    "calibrationWater": 504,
+    "step": 1000,
+    "ssid": "Vodafone-C3AF",
+    "password": "nbBKA3rtBUdGbNMB",
+    "hooks": [
+        "http://localhost:5000/collect"
+    ]
+}
