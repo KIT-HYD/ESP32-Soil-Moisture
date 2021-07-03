@@ -1,5 +1,6 @@
 import ujson
 from machine import ADC, Pin
+from ucollections import deque
 
 
 def config(new_config = None):
@@ -18,6 +19,30 @@ def config(new_config = None):
         ujson.dump(conf, f, indent=4)
     
     return conf
+
+
+def save_internal(values: tuple, maxlen=100):
+    # check for the file
+    l = read_internal()
+    
+    # create a deque
+    manager = deque(l, maxlen=maxlen)
+    manager.append({'raw': values[1], 'moisture': values[0]})
+
+    # save
+    with open('readings.json', 'w') as f:
+        ujson.dump(list(manager), f)
+
+
+def read_internal():
+    # check for the file
+    try:
+        with open('readings.json') as f:
+            l = ujson.load(f)
+    except OSError:
+        l = []
+    
+    return l
 
 
 def read(adc = None, calibrationAir = None, calibrationWater = None, attenuation = ADC.ATTN_11DB, resolution = ADC.WIDTH_10BIT, cycle=5):
