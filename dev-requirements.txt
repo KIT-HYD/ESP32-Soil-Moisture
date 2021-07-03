@@ -1,3 +1,3 @@
-micropy-cli
 adafruit-ampy
 esptool
+micropy-cli
