@@ -6,7 +6,7 @@ def config(new_config = None):
     """
     Read and write to the config.json file
     """
-    with open('config.json') as f:
+    with open('sm_config.json') as f:
         conf = ujson.load(f)
     
     if new_config is None:
@@ -14,7 +14,7 @@ def config(new_config = None):
     else:
         conf.update(new_config)
     
-    with open('config.json', 'w') as f:
+    with open('sm_config.json', 'w') as f:
         ujson.dump(conf, f, indent=4)
     
     return conf
