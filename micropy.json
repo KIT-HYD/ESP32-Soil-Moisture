@@ -4,7 +4,9 @@
         "esp32-micropython-1.15.0": "1.3.9"
     },
     "dev-packages": {
-        "micropy-cli": "*"
+        "micropy-cli": "*",
+        "adafruit-ampy": "*",
+        "esptool": "*"
     },
     "packages": {},
     "config": {
