@@ -41,6 +41,8 @@ If you run into communication errors, you can choose a slower baud rate like 115
 
 ## upload programm
 
+First, rename `sm_config.json.example` to `sm_config.json` and adjust the file content to your
+needs.
 You can use an IDE like thonny (`pip install thonny`) to upload the files, or `ampy`:
 
 You can copy all firmware files to your board like:

@@ -130,3 +130,4 @@ dmypy.json
 
 # project settings
 .vscode
+sm_config.json
